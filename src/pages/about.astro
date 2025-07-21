@@ -10,6 +10,8 @@ const identity = {
 };
 
 const skills = ["HTML", "Java", "JavaScript", "Vue", "Astro", "Writing Docs"];
+
+const skillColor = "navy";
 ---
 
 <html lang="zh">
@@ -17,11 +19,21 @@ const skills = ["HTML", "Java", "JavaScript", "Vue", "Astro", "Writing Docs"];
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+    <style define:vars={{skillColor}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <a href="/">首页</a>
     <a href="/about/">关于</a>
-    <a href="/blog/">博客</a>
+    <a href="/blogs/">博客</a>
 
     <h1>{pageTitle}</h1>
     <h1>我的 Astro 学习博客</h1>
@@ -36,7 +48,7 @@ const skills = ["HTML", "Java", "JavaScript", "Vue", "Astro", "Writing Docs"];
     </ul>
     <p>我的技能是：</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
     <ul>
       <li><a href="/posts/post-1/">文章 1</a></li>
