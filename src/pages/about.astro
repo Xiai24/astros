@@ -3,13 +3,13 @@
 const pageTitle = "关于我";
 
 const identity = {
-  firstName: "莎拉",
-  country: "加拿大",
+  firstName: "希燃",
+  country: "中国",
   occupation: "技术撰稿人",
-  hobbies: ["摄影", "观鸟", "棒球"],
+  hobbies: ["摄影", "跑步", "看书"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ["HTML", "Java", "JavaScript", "Vue", "Astro", "Writing Docs"];
 ---
 
 <html lang="zh">
@@ -26,6 +26,18 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
     <h1>{pageTitle}</h1>
     <h1>我的 Astro 学习博客</h1>
     <p>这是我的 Astro 学习笔记</p>
+    <p>以下是关于我的几个事实：</p>
+    <ul>
+      <li>我的名字是{identity.firstName}.</li>
+      <li>我住在{identity.country}。我的职业是{identity.occupation}。</li>
+      {identity.hobbies.length >= 2 &&
+        <li>我的三个习惯：{identity.hobbies[0]}和{identity.hobbies[1]},{identity.hobbies[2]}</li>
+      }
+    </ul>
+    <p>我的技能是：</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
     <ul>
       <li><a href="/posts/post-1/">文章 1</a></li>
       <li><a href="/posts/post-2/">文章 2</a></li>
