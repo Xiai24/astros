@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/Footer.astro'; 
+import Navigation from '../components/Navigation.astro';
 // 这里是 Astro 的 Frontmatter（组件脚本）
 const pageTitle = "关于我";
 
@@ -33,9 +34,7 @@ const skillColor = "navy";
     </style>
   </head>
   <body>
-    <a href="/">首页</a>
-    <a href="/about/">关于</a>
-    <a href="/blogs/">博客</a>
+    <Navigation></Navigation>
 
     <h1>{pageTitle}</h1>
     <h1>我的 Astro 学习博客</h1>
